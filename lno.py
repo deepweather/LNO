@@ -186,14 +186,7 @@ def test_lno2d():
     width = 32
     channels = 3
 
-    # Instantiate the LNO2D module
     lno2d = LNO2D(hidden_size=64)
-
-    # Create random input tensor
     input_tensor = torch.randn(batch_size, height, width, channels)
-
-    # Forward pass
     output_tensor = lno2d(input_tensor)
-
-    # Check if the output tensor has the same shape as the input tensor
     assert input_tensor.shape == output_tensor.shape, f"Output shape {output_tensor.shape} doesn't match input shape {input_tensor.shape}"
